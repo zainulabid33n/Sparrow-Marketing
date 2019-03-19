@@ -1,0 +1,29 @@
+{% extends "bootstrap/base.html" %}
+
+{% block content %}
+<center><div class="panel panel-primary" style="width: 50%">
+  <div class="panel-heading">Post Details</div>
+  <div class="panel-body">
+
+{%for item in conversations%}
+
+    <b>Conversation Id</b>{{item["conversation_id"]}}<br>
+    <b>Post Link</b>{{item["post_link"]}}<br>
+    <b>Last Updated</b>{{item["last_updated"]}}<br>
+    
+    <center><form action="{{ url_for('chats') }}" method="post">
+    	<input type="hidden" name="see_chats" value='{{item["conversation_id"]}}'>
+    	<input value="See Conversation" type="submit">
+    </form>
+    </center>
+    ---------------------------------------------------<br>
+{% endfor %}
+
+
+
+
+
+	</div>
+	</div>
+</center>
+{% endblock %}

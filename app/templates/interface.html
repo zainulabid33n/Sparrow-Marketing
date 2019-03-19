@@ -1,0 +1,24 @@
+{% extends "bootstrap/base.html" %}
+
+
+{% block content %}
+<div class="panel panel-primary" style="width: 25%">
+  <div class="panel-heading">Get Simplified Look Over your Page Data</div>
+  <div class="panel-body" >
+    
+    <h2>Get Posts</h2>
+    <form action="{{ url_for('posts') }}" method="post">
+    	
+    <input value="Get Posts" type="submit">
+    </form>
+
+    <br><br>
+    <h2>Get Conversations</h2>
+    <form action="{{ url_for('conversations') }}" method="post">
+        <input value="See Conversations" type="submit">
+    </form>
+    <br><br>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "bootstrap/base.html" %}
+
+{% block content %}
+<center><div class="panel panel-primary" style="width:60%">
+  <div class="panel-heading">Post Details</div>
+  <div class="panel-body">
+
+<b>--------------------Messages---------------------</b><br>
+{%for item in messages["message_list"]%}
+
+	<b>Message ID:</b> {{item["message_id"]}}<br><br>
+    <b>Message:</b> {{item["message"]}}<br><br>
+
+    ---------------------------------------------------<br>
+{% endfor %}
+
+	<center><form action="{{ url_for('reply') }}" method="post">
+          Reply:
+          <input type="hidden" name="conversation_id" value="{{messages['conversation_id']}}">
+          <input type="text" name="reply">&nbsp&nbsp
+          <input value="reply" type="submit">
+      </form>
+    </center>
+
+	</div>
+	</div>
+</center>
+{% endblock %}

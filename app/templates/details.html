@@ -1,0 +1,32 @@
+{% extends "bootstrap/base.html" %}
+
+
+{% block content %}
+<center><div class="panel panel-primary" style="width: 50%">
+  <div class="panel-heading">Post Details</div>
+  <div class="panel-body" >
+
+<b>--------------------Comments---------------------</b><br>
+{%for item in final["comment_list"]%}
+
+    <b>Sender ID:</b> {{item["sender_id"]}}<br><br>
+    <b>Sender Name:</b> {{item["name"]}}<br><br>
+    <b>Comment ID:</b> {{item["comment_id"]}}<br><br>
+    <b>Comment:</b> {{item["comment"]}}<br><br>
+    ---------------------------------------------------<br>
+{% endfor %}
+<b>=====================================Likes==================================</b><br>
+{%for item in final["like_list"]%}
+
+    <b>ID:</b> {{item["likers_id"]}}<br><br>
+    <b>Name:</b> {{item["liker_name"]}}<br><br>
+    <b>Reaction Type:</b> {{item["type"]}}<br><br>
+    ---------------------------------------------------<br>
+{% endfor %}
+<b>=====================================Shares==================================</b><br>
+{{final["shares"]}}
+
+        </div>
+</div>
+</center>
+{% endblock %}
