@@ -2,12 +2,12 @@ from flask import Flask, render_template, jsonify, session
 # from flask.ext.session.__init__ import Session
 from flask_bootstrap import Bootstrap
 from flask import request
-import redis
+#import redis
 import facebook
-import requests
-import json
-import MySQLdb
-import mysql.connector
+#import requests
+#import json
+#import MySQLdb
+#import mysql.connector
 
 
 
@@ -16,7 +16,7 @@ app = Flask(__name__)
 SESSION_TYPE = 'redis'
 Bootstrap(app)
 app.config.from_object(__name__)
-app.secret_key = "I'm sexy and I know it!!!"
+app.secret_key = "Sparrow Maketting Secret Key"
 
 @app.route('/')
 def home():
